@@ -10,7 +10,9 @@ namespace sysmon.Views
 
     public partial class MainWindow : Window
     {
-        
+
+        private static MainWindow? _instance;
+
         private readonly MainWindowViewModel _vm;
 
 
@@ -21,21 +23,20 @@ namespace sysmon.Views
             };
             InitializeComponent();
 
+            _instance ??= this;
+
 
 #if DEBUG
             this.AttachDevTools();
 #endif
         }
+        
+        public static MainWindow Instance => _instance ??= new MainWindow();
        
 
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
-        }
-
-        private void Close(object? sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }
