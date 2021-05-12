@@ -2,20 +2,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="200"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="100"
         Width="500"
-        Height="200"
+        Height="100"
         x:Class="sysmon.Windows.RunWindow"
+        WindowStartupLocation="CenterOwner"
         Title="Run...">
-    
+
     <Window.Styles>
         <Style Selector="CaptionButtons Panel#PART_RestoreButton">
             <Setter Property="IsVisible" Value="False" />
         </Style>
     </Window.Styles>
-    
-    
-    
-    
-    Welcome to Avalonia!
+
+
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Margin="0 0 0 20">Enter the program name or path...</TextBlock>
+        <DockPanel>
+            <TextBox Width="300" />
+            <Button Margin="10 0 0 0" Click="OpenFileDialog">
+                ...
+            </Button>
+            <Button Margin="10 0 0 0">
+                Run
+            </Button>
+        </DockPanel>
+    </StackPanel>
+
 </Window>
