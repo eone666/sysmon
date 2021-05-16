@@ -23,6 +23,9 @@
       <Compile Update="Windows\RunWindow.axaml.cs">
         <DependentUpon>RunWindow.axaml</DependentUpon>
       </Compile>
+      <Compile Update="Windows\MainWindowViewModel.cs">
+        <DependentUpon>MainWindow.axaml</DependentUpon>
+      </Compile>
     </ItemGroup>
     <ItemGroup>
       <UpToDateCheckInput Remove="Components\AppMenu.axaml" />

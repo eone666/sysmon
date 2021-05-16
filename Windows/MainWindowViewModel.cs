@@ -1,4 +1,5 @@
 ﻿using System;
+using ReactiveUI;
 
 namespace sysmon.ViewModels
 {
@@ -6,5 +7,6 @@ namespace sysmon.ViewModels
     
     public class MainWindowViewModel : ViewModelBase
     {
+        
     }
 }

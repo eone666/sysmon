@@ -9,6 +9,7 @@ namespace sysmon.Windows
 {
     public class RunWindow : Window
     {
+        
         public RunWindow()
         {
             InitializeComponent();
@@ -22,24 +23,15 @@ namespace sysmon.Windows
             AvaloniaXamlLoader.Load(this);
         }
 
-        private async void OpenFileDialog(object? sender, RoutedEventArgs e)
+        private void Run(object? sender, RoutedEventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-
-            string[] result = await dialog.ShowAsync(this);
-
-            if (result != null && result.Length > 0)
+            try
             {
-                try
-                {
- 
-                        Process.Start(result[0]);
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine(exception);
-                    throw;
-                }
+                Process.Start("");
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
             }
         }
     }

@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:components="clr-namespace:sysmon.Components"
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="100"
         Width="500"
         Height="100"
@@ -19,11 +20,8 @@
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <TextBlock Margin="0 0 0 20">Enter the program name or path...</TextBlock>
         <DockPanel>
-            <TextBox Width="300" />
-            <Button Margin="10 0 0 0" Click="OpenFileDialog">
-                ...
-            </Button>
-            <Button Margin="10 0 0 0">
+            <components:FilePicker Width="300"/>
+            <Button Margin="10 0 0 0" Click="Run">
                 Run
             </Button>
         </DockPanel>
