@@ -7,8 +7,14 @@
         Width="500"
         Height="100"
         x:Class="sysmon.Windows.RunWindow"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaChromeHints="PreferSystemChrome"
+        ExtendClientAreaTitleBarHeightHint="999"
+        ExtendClientAreaToDecorationsHint="True"
         WindowStartupLocation="CenterOwner"
-        Title="Run...">
+        Title="Run..."
+        Opened="OnOpened">
 
     <Window.Styles>
         <Style Selector="CaptionButtons Panel#PART_RestoreButton">
@@ -20,7 +26,7 @@
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <TextBlock Margin="0 0 0 20">Enter the program name or path...</TextBlock>
         <DockPanel>
-            <components:FilePicker Width="300"/>
+            <components:FilePicker Width="300" />
             <Button Margin="10 0 0 0" Click="Run">
                 Run
             </Button>

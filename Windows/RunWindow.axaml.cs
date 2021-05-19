@@ -5,34 +5,29 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 
-namespace sysmon.Windows
-{
-    public class RunWindow : Window
-    {
-        
-        public RunWindow()
-        {
-            InitializeComponent();
+namespace sysmon.Windows {
+  public class RunWindow : Window {
+    public RunWindow() {
+      InitializeComponent();
 #if DEBUG
-            this.AttachDevTools();
+      this.AttachDevTools();
 #endif
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
-
-        private void Run(object? sender, RoutedEventArgs e)
-        {
-            try
-            {
-                Process.Start("");
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-            }
-        }
     }
+
+    private void InitializeComponent() {
+      AvaloniaXamlLoader.Load(this);
+    }
+
+    private void Run(object? sender, RoutedEventArgs e) {
+      try {
+        Process.Start("");
+      } catch (Exception exception) {
+        Console.WriteLine(exception);
+      }
+    }
+
+    private void OnOpened(object? sender, EventArgs e) {
+      CanResize = false;
+    }
+  }
 }
