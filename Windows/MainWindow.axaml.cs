@@ -1,42 +1,29 @@
-using System;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using sysmon.ViewModels;
 
-namespace sysmon.Views
-{
+namespace sysmon.Windows {
+  public partial class MainWindow : Window {
+    private static MainWindow? _instance;
 
-    public partial class MainWindow : Window
-    {
+    private readonly MainWindowViewModel _vm;
 
-        private static MainWindow? _instance;
+    public MainWindow() {
+      DataContext = _vm = new MainWindowViewModel() {
+      };
+      InitializeComponent();
 
-        private readonly MainWindowViewModel _vm;
-
-
-        public MainWindow()
-        {
-            DataContext = _vm = new()
-            {
-            };
-            InitializeComponent();
-
-            _instance ??= this;
-
+      _instance ??= this;
 
 #if DEBUG
-            this.AttachDevTools();
+      this.AttachDevTools();
 #endif
-        }
-        
-        public static MainWindow Instance => _instance ??= new MainWindow();
-       
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
+
+    public static MainWindow Instance => _instance ??= new MainWindow();
+
+    private void InitializeComponent() {
+      AvaloniaXamlLoader.Load(this);
+    }
+  }
 }

@@ -1,29 +1,22 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using sysmon.ViewModels;
-using sysmon.Views;
+using sysmon.Windows;
 
-namespace sysmon
-{
-    public class App : Application
-    {
-        public override void Initialize()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
-
-        public override void OnFrameworkInitializationCompleted()
-        {
-            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-            {
-                desktop.MainWindow = new MainWindow
-                {
-                    DataContext = new MainWindowViewModel(),
-                };
-            }
-
-            base.OnFrameworkInitializationCompleted();
-        }
+namespace sysmon {
+  public class App : Application {
+    public override void Initialize() {
+      AvaloniaXamlLoader.Load(this);
     }
+
+    public override void OnFrameworkInitializationCompleted() {
+      if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) {
+        desktop.MainWindow = new MainWindow {
+          DataContext = new MainWindowViewModel(),
+        };
+      }
+
+      base.OnFrameworkInitializationCompleted();
+    }
+  }
 }

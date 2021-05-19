@@ -1,27 +1,26 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:sysmon.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:components="clr-namespace:sysmon.Components"
+        xmlns:windows="clr-namespace:sysmon.Windows"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="sysmon.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
+        x:Class="sysmon.Windows.MainWindow"
         Title="System Monitor">
 
     <Design.DataContext>
-        <vm:MainWindowViewModel/>
+        <windows:MainWindowViewModel />
     </Design.DataContext>
-    
+
     <Window.Styles>
         <StyleInclude Source="/Styles/Tabs.axaml" />
     </Window.Styles>
-    
+
     <Grid RowDefinitions="Auto,*">
-        
-        <components:AppMenu Grid.Row="0"/>
-    
-        <TabControl Classes="Tabs" Grid.Row="1" VerticalAlignment="Top"  >
+
+        <components:AppMenu Grid.Row="0" />
+
+        <TabControl Classes="Tabs" Grid.Row="1" VerticalAlignment="Top">
             <TabItem>
                 <TabItem.Header>
                     <TextBlock VerticalAlignment="Center">Processes</TextBlock>
@@ -33,6 +32,5 @@
         </TabControl>
     </Grid>
 
-   
 
 </Window>

@@ -1,12 +1,4 @@
-﻿using System;
-using ReactiveUI;
-
-namespace sysmon.ViewModels
-{
-    
-    
-    public class MainWindowViewModel : ViewModelBase
-    {
-        
-    }
+﻿namespace sysmon.Windows {
+  public class MainWindowViewModel : ViewModelBase {
+  }
 }

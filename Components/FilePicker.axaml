@@ -5,9 +5,9 @@
              xmlns:components="clr-namespace:sysmon.Components"
              mc:Ignorable="d"
              x:Class="sysmon.Components.FilePicker">
-    
+
     <Design.DataContext>
-        <components:FilePickerViewModel/>
+        <components:FilePickerViewModel />
     </Design.DataContext>
     <Grid ColumnDefinitions="*,Auto">
         <TextBox Grid.Column="0" Text="{Binding Path}" />

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ReactiveUI;
+﻿using ReactiveUI;
 
-namespace sysmon.ViewModels
-{
-    public class ViewModelBase : ReactiveObject
-    {
-    }
+namespace sysmon {
+  public class ViewModelBase : ReactiveObject {
+  }
 }
