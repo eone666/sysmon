@@ -10,7 +10,7 @@
         TransparencyLevelHint="AcrylicBlur"
         Background="Transparent"
         ExtendClientAreaChromeHints="PreferSystemChrome"
-        ExtendClientAreaTitleBarHeightHint="999"
+        ExtendClientAreaTitleBarHeightHint="30"
         ExtendClientAreaToDecorationsHint="True"
         WindowStartupLocation="CenterOwner"
         Title="Run..."
@@ -22,15 +22,34 @@
         </Style>
     </Window.Styles>
 
+    <Panel>
 
-    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        <TextBlock Margin="0 0 0 20">Enter the program name or path...</TextBlock>
-        <DockPanel>
-            <components:FilePicker Width="300" />
-            <Button Margin="10 0 0 0" Click="Run">
-                Run
-            </Button>
-        </DockPanel>
-    </StackPanel>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    TintColor="Black"
+                    TintOpacity="1"
+                    MaterialOpacity="0.65" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+            <TextBlock Margin="0 0 0 20">Enter the program name or path...</TextBlock>
+
+            <DockPanel>
+
+                <components:FilePicker Width="300" />
+
+                <Button Margin="10 0 0 0" Click="Run">
+                    Run
+                </Button>
+
+            </DockPanel>
+
+        </StackPanel>
+
+    </Panel>
 
 </Window>

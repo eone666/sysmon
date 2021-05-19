@@ -22,7 +22,7 @@ namespace sysmon.Windows {
       try {
         Process.Start("");
       } catch (Exception exception) {
-        Console.WriteLine(exception);
+        Message.Show(this, exception.Message);
       }
     }
 

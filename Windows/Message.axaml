@@ -1,25 +1,30 @@
-<Window xmlns="https://github.com/avaloniaui"
+﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:components="clr-namespace:sysmon.Components"
         xmlns:windows="clr-namespace:sysmon.Windows"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="sysmon.Windows.MainWindow"
+        x:Class="sysmon.Windows.Message"
+        Width="500"
+        SizeToContent="Height"
         TransparencyLevelHint="AcrylicBlur"
         Background="Transparent"
         ExtendClientAreaChromeHints="PreferSystemChrome"
         ExtendClientAreaTitleBarHeightHint="30"
         ExtendClientAreaToDecorationsHint="True"
-        Title="System Monitor">
-
-    <Design.DataContext>
-        <windows:MainWindowViewModel />
-    </Design.DataContext>
+        WindowStartupLocation="CenterOwner"
+        Title="Message"
+        Opened="OnOpened">
 
     <Window.Styles>
-        <StyleInclude Source="/Styles/Tabs.axaml" />
+        <Style Selector="CaptionButtons Panel#PART_RestoreButton">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
     </Window.Styles>
+
+    <Design.DataContext>
+        <windows:MessageViewModel />
+    </Design.DataContext>
 
     <Panel>
 
@@ -33,21 +38,18 @@
             </ExperimentalAcrylicBorder.Material>
         </ExperimentalAcrylicBorder>
 
-        <Grid RowDefinitions="Auto,*">
+        <StackPanel Margin="20,40,20,20"
+                    Spacing="20">
 
-            <components:AppMenu Grid.Row="0" />
+            <TextBlock Text="{Binding Message}"
+                       TextWrapping="Wrap" />
 
-            <TabControl Classes="Tabs" Grid.Row="1" VerticalAlignment="Top">
-                <TabItem>
-                    <TabItem.Header>
-                        <TextBlock VerticalAlignment="Center">Processes</TextBlock>
-                    </TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock>TabContent</TextBlock>
-                    </StackPanel>
-                </TabItem>
-            </TabControl>
-        </Grid>
+            <Panel HorizontalAlignment="Center">
+                <Button Content="OK"
+                        Click="Ok" />
+            </Panel>
+
+        </StackPanel>
 
     </Panel>
 
