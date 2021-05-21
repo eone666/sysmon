@@ -35,9 +35,9 @@
 
         <Grid RowDefinitions="Auto,*">
 
-            <components:AppMenu Grid.Row="0" />
+            <components:AppMenu Grid.Row="0" HorizontalAlignment="Left" />
 
-            <TabControl Classes="Tabs" Grid.Row="1" VerticalAlignment="Top">
+            <TabControl Classes="Tabs" Grid.Row="1" VerticalAlignment="Stretch">
                 <TabItem>
                     <TabItem.Header>
                         <TextBlock VerticalAlignment="Center">Processes</TextBlock>
