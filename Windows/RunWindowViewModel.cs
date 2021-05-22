@@ -1,7 +1,7 @@
 using ReactiveUI;
 
-namespace sysmon.Components {
-  public class FilePickerViewModel : ReactiveObject {
+namespace sysmon.Windows {
+  public class RunWindowViewModel : ReactiveObject {
     private string _path = "";
 
     public string Path {

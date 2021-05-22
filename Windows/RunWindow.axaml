@@ -2,10 +2,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:components="clr-namespace:sysmon.Components"
-        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="100"
+        xmlns:windows="clr-namespace:sysmon.Windows"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="150"
         Width="500"
-        Height="100"
+        Height="150"
         x:Class="sysmon.Windows.RunWindow"
         TransparencyLevelHint="AcrylicBlur"
         Background="Transparent"
@@ -21,6 +21,10 @@
             <Setter Property="IsVisible" Value="False" />
         </Style>
     </Window.Styles>
+
+    <Design.DataContext>
+        <windows:RunWindowViewModel/>
+    </Design.DataContext>
 
     <Panel>
 
@@ -40,12 +44,13 @@
 
             <DockPanel>
 
-                <components:FilePicker Width="300" />
-
+                <TextBox Width="300" KeyUp="OnEnterPress" Text="{Binding Path}" />
+                <Button Margin="10 0 0 0" Click="OpenFileDialog">
+                    ...
+                </Button>
                 <Button Margin="10 0 0 0" Click="Run">
                     Run
                 </Button>
-
             </DockPanel>
 
         </StackPanel>
